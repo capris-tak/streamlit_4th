@@ -1,4 +1,4 @@
-import streamlitas st
+import streamlit as st
 import cv2
 import matplotlib.pyplot as plt
 import copy

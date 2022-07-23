@@ -1,8 +1,8 @@
 import streamlit as st
-import cv2
+import numpy as np
 import matplotlib.pyplot as plt
 import copy
-import numpy as np
+import cv2
 
 from src import model
 from src import util

@@ -1,8 +1,7 @@
 streamlit
 numpy
 matplotlib
-opencv-python
+opencv-python3
 scipy
 scikit-image
 tqdm
-src

@@ -12,8 +12,8 @@ from src.hand import Hand
 st.title('Home')
 st.write("This is a sample home page in the mutliapp.")
 
-body_estimation = Body('model/body_pose_model.pth')
-hand_estimation = Hand('model/hand_pose_model.pth')
+body_estimation = Body('pytorch-openpose/model/body_pose_model.pth')
+hand_estimation = Hand('pytorch-openpose/model/hand_pose_model.pth')
 
 test_image = 'test.jpg'
 oriImg = cv2.imread(test_image)  # B,G,R order

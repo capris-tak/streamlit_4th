@@ -1,5 +1,2 @@
 streamlit
-mecab-python3
-unidic-lite
-wordcloud
-matplotlib
+sympy

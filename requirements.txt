@@ -1,6 +1,4 @@
 streamlit
-numpy
-opencv-python-headless
-matplotlib
-scipy
-scikit-image
+transformers==4.5.0
+fugashi==1.1.0
+ipadic==1.0.0

@@ -4,7 +4,6 @@ from PIL import Image
 import cv2
 #import tempfile
 
-
 neiborhood8 = np.array([
     [1,1,1],
     [1,1,1],
@@ -13,10 +12,10 @@ neiborhood8 = np.array([
 )
 
 st.header('Edge Detect')
+uploaded_image = st.file_uploader('Choose an image..',type=['png', 'jpg','jpeg','webp'])
 
 ite_n = st.slider('線の太さ default:3', 0, 10, 3)
 
-uploaded_image = st.file_uploader('Choose an image..',type=['png', 'jpg','jpeg','webp'])
 if uploaded_image is not None:
 	#with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
 	#	fp = Path(tmp_file.name)
@@ -34,8 +33,6 @@ if uploaded_image is not None:
 		st.image(img_array, caption = '1 original', use_column_width = True)
 	with col5:	
 		st.image(contour, caption = '5 contour', use_column_width = True)
-	
-	#ite_n = st.slider('線の太さ', 0, 10, 3)
 	
 	col2, col3, col4 = st.columns(3)
 	with col2:

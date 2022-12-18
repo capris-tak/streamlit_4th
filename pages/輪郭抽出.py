@@ -40,9 +40,6 @@ if uploaded_image is not None:
 		
 	is_success, im_buf_arr = cv2.imencode(".jpg", contour)
 	byte_im = im_buf_arr.tobytes()
-	#io_buf = io.BytesIO(contour)
-	#byte_im = io_buf.getvalue()
-	#save_image = Image.open(byte_im)
 	btn = st.download_button(label="Download image", data=byte_im, file_name="edge.jpg", mime="image/jpg")
 	
 	col2, col3, col4 = st.columns(3)

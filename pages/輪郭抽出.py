@@ -40,7 +40,7 @@ if uploaded_image is not None:
 		
 		
 	io_buf = io.BytesIO(contour)
-	byte_im = io_buf.getvalue()		
+	byte_im = np.array(io_buf.getvalue())		
 	#save_image = Image.open(contour)
 	btn = st.download_button(label="Download image", data=byte_im, file_name="edge.png", mime="image/png")
 	

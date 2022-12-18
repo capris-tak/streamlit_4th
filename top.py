@@ -22,10 +22,13 @@ if uploaded_image is not None:
 
 	image=Image.open(uploaded_image)
 	img_array = np.array(image)
-	st.image(img_array,caption = 'original',use_column_width = True)
+	st.image(img_array, caption = 'original',use_column_width = True)
 	
 	gray = cv2.cvtColor(img_array, cv2.COLOR_RGB2GRAY)
-	st.image(gray,caption = 'original',use_column_width = True)
+	st.image(gray, caption = 'grayscale',use_column_width = True)
+	
+	dilated = cv2.dilate(gray, neiborhood8, iterations=3)
+	st.image(dilated, caption = 'dilated',use_column_width = True)
 	
 
 

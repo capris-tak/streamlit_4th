@@ -3,7 +3,6 @@ import numpy as np
 from PIL import Image
 import cv2
 import tempfile
-import io
 
 
 neiborhood8 = np.array([

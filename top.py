@@ -33,8 +33,7 @@ if uploaded_image is not None:
 		st.image(img_array, caption = '1 original', use_column_width = True)
 	with col5:	
 		st.image(contour, caption = '5 contour', use_column_width = True)
-	bytes_data = contour.read()
-	save_image = Image.open(io.BytesIO(bytes_data))
+	save_image = Image.open(contour)
 	btn = st.download_button(label="Download image", data=save_image, file_name="edge.png", mime="image/png")
 	
 	col2, col3, col4 = st.columns(3)

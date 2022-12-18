@@ -30,6 +30,13 @@ if uploaded_image is not None:
 	dilated = cv2.dilate(gray, neiborhood8, iterations=3)
 	st.image(dilated, caption = 'dilated',use_column_width = True)
 	
+	diff = cv2.absdiff(dilated, gray)
+	st.image(diff, caption = 'dilated',use_column_width = True)
+	
+	contour = 255 - diff
+	st.image(contour, caption = 'dilated',use_column_width = True)
+	
+	
 
 
 st.title("Streamlit + OpenCV Sample")

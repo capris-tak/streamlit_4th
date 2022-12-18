@@ -22,24 +22,27 @@ if uploaded_image is not None:
 	#	fp = Path(tmp_file.name)
 	#	fp.write_bytes(uploaded_image.getvalue())
 	
-	col1, col2, col3, col4 = st.columns(4)
-
 	image=Image.open(uploaded_image)
 	img_array = np.array(image)
+	gray = cv2.cvtColor(img_array, cv2.COLOR_RGB2GRAY)
+	dilated = cv2.dilate(gray, neiborhood8, iterations=ite_n)
+	diff = cv2.absdiff(dilated, gray)
+	contour = 255 - diff
+	st.image(contour, caption = 'contour', use_column_width = True)
+	
+	ite_n = st.slider('線の太さ', 0, 10, 3)
+	
+	col1, col2, col3, col4 = st.columns(4)
 	with col1:
 		st.image(img_array, caption = 'original', use_column_width = True)
 	with col2:
-		gray = cv2.cvtColor(img_array, cv2.COLOR_RGB2GRAY)
 		st.image(gray, caption = 'grayscale', use_column_width = True)
 	with col3:
-		dilated = cv2.dilate(gray, neiborhood8, iterations=ite_n)
 		st.image(dilated, caption = 'dilated', use_column_width = True)
 	with col4:
-		diff = cv2.absdiff(dilated, gray)
 		st.image(diff, caption = 'dilated', use_column_width = True)
-	
-	contour = 255 - diff
-	st.image(contour, caption = 'contour', use_column_width = True)
+
+
 	
 	
 

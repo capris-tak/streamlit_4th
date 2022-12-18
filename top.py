@@ -14,7 +14,7 @@ neiborhood8 = np.array([
 st.header('Edge Detect')
 
 uploaded_image = st.file_uploader('Choose an image..',type=['png', 'jpg','jpeg','webp'])
-image=Image.open(uploaded_file)
+image=Image.open(uploaded_image)
 img_array = np.array(image)
 st.image(img_array,caption = 'サムネイル画像',use_column_width = True)
 

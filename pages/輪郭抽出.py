@@ -42,7 +42,7 @@ if uploaded_image is not None:
 	#io_buf = io.BytesIO(contour)
 	#byte_im = io_buf.getvalue()
 	buf = io.BytesIO()
-	contour.save(buf, format='JPEG')
+	np.array(contour).save(buf, format='JPEG')
 	#save_image = Image.open(contour)
 	btn = st.download_button(label="Download image", data=contour, file_name="edge.png", mime="image/png")
 	

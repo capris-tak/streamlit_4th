@@ -28,13 +28,16 @@ if uploaded_image is not None:
 	dilated = cv2.dilate(gray, neiborhood8, iterations=ite_n)
 	diff = cv2.absdiff(dilated, gray)
 	contour = 255 - diff
-	st.image(contour, caption = 'contour', use_column_width = True)
+	
+	col1, col5 = st.columns(2)
+	with col1:
+		st.image(img_array, caption = 'original', use_column_width = True)
+	with col5:	
+		st.image(contour, caption = 'contour', use_column_width = True)
 	
 	#ite_n = st.slider('線の太さ', 0, 10, 3)
 	
-	col1, col2, col3, col4 = st.columns(4)
-	with col1:
-		st.image(img_array, caption = 'original', use_column_width = True)
+	col2, col3, col4 = st.columns(3)
 	with col2:
 		st.image(gray, caption = 'grayscale', use_column_width = True)
 	with col3:

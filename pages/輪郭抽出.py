@@ -49,13 +49,6 @@ if uploaded_image is not None:
 	with col4:
 		st.image(diff, caption = '4 absdiff', use_column_width = True)
 		
-	with open("edge.png", "rb") as file:
-		btn = st.download_button(
-		label="Download image",
-		data=contour,
-		file_name="edge.png",
-		mime="image/png"
-		)
 
 
 	

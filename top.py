@@ -14,3 +14,13 @@ neiborhood8 = np.array([
 st.header('Edge Detect')
 
 uploaded_image = st.file_uploader('Choose an image..',type=['png', 'jpg','jpeg','webp'])
+
+
+
+st.title("Streamlit + OpenCV Sample")
+
+
+img = np.zeros((500, 500, 3), np.uint8)
+cv2.rectangle(img, (100, 100), (400, 400), color=(255, 0, 0), thickness=-1)
+
+st.image(img)

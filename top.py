@@ -40,7 +40,7 @@ if uploaded_image is not None:
 	with col3:
 		st.image(dilated, caption = 'dilated', use_column_width = True)
 	with col4:
-		st.image(diff, caption = 'dilated', use_column_width = True)
+		st.image(diff, caption = 'diff', use_column_width = True)
 
 
 	

@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 from PIL import Image
 import cv2
-#import tempfile
+import io
 
 neiborhood8 = np.array([
     [1,1,1],
@@ -33,7 +33,8 @@ if uploaded_image is not None:
 		st.image(img_array, caption = '1 original', use_column_width = True)
 	with col5:	
 		st.image(contour, caption = '5 contour', use_column_width = True)
-	save_image = Image.open(contour)
+		
+	save_image = Image.open(io.BytesIO(contour))
 	btn = st.download_button(label="Download image", data=save_image, file_name="edge.png", mime="image/png")
 	
 	col2, col3, col4 = st.columns(3)

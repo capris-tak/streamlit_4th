@@ -14,7 +14,7 @@ neiborhood8 = np.array([
 
 st.header('Edge Detect')
 
-ite_n = st.slider('線の太さ', 0, 10, 3)
+ite_n = st.slider('線の太さ default:3', 0, 10, 3)
 
 uploaded_image = st.file_uploader('Choose an image..',type=['png', 'jpg','jpeg','webp'])
 if uploaded_image is not None:

@@ -12,6 +12,9 @@ neiborhood8 = np.array([
 )
 
 st.header('Edge Detect')
+st.subheader('【ゆっくり解説】線画抽出！OpenCVで画像からぬりえ作る')
+
+
 uploaded_image = st.file_uploader('Choose an image..',type=['png', 'jpg','jpeg','webp'])
 
 ite_n = st.slider('線の太さ default:3', 0, 10, 3)

@@ -24,24 +24,24 @@ if uploaded_image is not None:
 
 	image=Image.open(uploaded_image)
 	img_array = np.array(image)
-	st.image(img_array, caption = 'original',use_column_width = True)
+	st.image(img_array, caption = 'original', use_column_width = True)
 	
 	gray = cv2.cvtColor(img_array, cv2.COLOR_RGB2GRAY)
-	st.image(gray, caption = 'grayscale',use_column_width = True)
+	st.image(gray, caption = 'grayscale', use_column_width = True)
 	
 	dilated = cv2.dilate(gray, neiborhood8, iterations=ite_n)
-	st.image(dilated, caption = 'dilated',use_column_width = True)
+	st.image(dilated, caption = 'dilated', use_column_width = True)
 	
 	diff = cv2.absdiff(dilated, gray)
-	st.image(diff, caption = 'dilated',use_column_width = True)
+	st.image(diff, caption = 'dilated', use_column_width = True)
 	
 	contour = 255 - diff
-	st.image(contour, caption = 'dilated',use_column_width = True)
+	st.image(contour, caption = 'contour', use_column_width = True)
 	
 	
 
 
-st.title("Streamlit + OpenCV Sample")
-img = np.zeros((500, 500, 3), np.uint8)
-cv2.rectangle(img, (100, 100), (400, 400), color=(255, 0, 0), thickness=-1)
-st.image(img)
+#st.title("Streamlit + OpenCV Sample")
+#img = np.zeros((500, 500, 3), np.uint8)
+#cv2.rectangle(img, (100, 100), (400, 400), color=(255, 0, 0), thickness=-1)
+#st.image(img)

@@ -14,9 +14,14 @@ neiborhood8 = np.array([
 st.header('Edge Detect')
 
 uploaded_image = st.file_uploader('Choose an image..',type=['png', 'jpg','jpeg','webp'])
-image=Image.open(uploaded_image)
-img_array = np.array(image)
-st.image(img_array,caption = 'サムネイル画像',use_column_width = True)
+if uploaded_image is not None:
+	with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
+		fp = Path(tmp_file.name)
+		fp.write_bytes(uploaded_image.getvalue())
+
+        image=Image.open(uploaded_image)
+        img_array = np.array(image)
+        st.image(img_array,caption = 'サムネイル画像',use_column_width = True)
 
 
 st.title("Streamlit + OpenCV Sample")

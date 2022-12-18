@@ -22,6 +22,8 @@ if uploaded_image is not None:
 	image=Image.open(uploaded_image)
 	img_array = np.array(image)
 	st.image(img_array,caption = 'サムネイル画像',use_column_width = True)
+	
+	gray = cv2.imread(image, cv2.IMREAD_GRAYSCALE)
 
 
 st.title("Streamlit + OpenCV Sample")

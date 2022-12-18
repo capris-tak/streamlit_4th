@@ -14,6 +14,8 @@ neiborhood8 = np.array([
 
 st.header('Edge Detect')
 
+ite_n = st.slider('線の太さ', 0, 10, 3)
+
 uploaded_image = st.file_uploader('Choose an image..',type=['png', 'jpg','jpeg','webp'])
 if uploaded_image is not None:
 	#with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
@@ -27,7 +29,7 @@ if uploaded_image is not None:
 	gray = cv2.cvtColor(img_array, cv2.COLOR_RGB2GRAY)
 	st.image(gray, caption = 'grayscale',use_column_width = True)
 	
-	dilated = cv2.dilate(gray, neiborhood8, iterations=3)
+	dilated = cv2.dilate(gray, neiborhood8, iterations=ite_n)
 	st.image(dilated, caption = 'dilated',use_column_width = True)
 	
 	diff = cv2.absdiff(dilated, gray)

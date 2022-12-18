@@ -37,11 +37,11 @@ if uploaded_image is not None:
 		st.image(img_array, caption = '1 original', use_column_width = True)
 	with col5:	
 		st.image(contour, caption = '5 contour', use_column_width = True)
-		
-	is_success, im_buf_arr = cv2.imencode(".jpg", contour)
-	byte_im = im_buf_arr.tobytes()
-	btn = st.download_button(label="Download 5.contour image", data=byte_im, file_name="edge.jpg", mime="image/jpg")
-	
+
+		is_success, im_buf_arr = cv2.imencode(".jpg", contour)
+		byte_im = im_buf_arr.tobytes()
+		btn = st.download_button(label="Download 5.contour image", data=byte_im, file_name="edge.jpg", mime="image/jpg")
+
 	col2, col3, col4 = st.columns(3)
 	with col2:
 		st.image(gray, caption = '2 grayscale', use_column_width = True)

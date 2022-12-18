@@ -1,2 +1,2 @@
 streamlit
-sympy
+opencv–python

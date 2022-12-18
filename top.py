@@ -11,4 +11,6 @@ neiborhood8 = np.array([
     np.uint8
 )
 
+st.header('Edge Detect')
 
+uploaded_image = st.file_uploader('Choose an image..',type=['png', 'jpg','jpeg','webp'])

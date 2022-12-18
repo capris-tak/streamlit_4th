@@ -12,8 +12,8 @@ neiborhood8 = np.array([
 )
 
 st.header('Edge Detect')
-st.caption('【ゆっくり解説】線画抽出！OpenCVで画像からぬりえ作る')
-st.caption('https://www.youtube.com/watch?v=y86po2F8Gjg')
+# https://www.youtube.com/watch?v=y86po2F8Gjg
+# 【ゆっくり解説】線画抽出！OpenCVで画像からぬりえ作る【Python/初心者向けパイソンプログラミング講座】 あずぱん動画
 
 
 uploaded_image = st.file_uploader('Choose an image..',type=['png', 'jpg','jpeg','webp'])

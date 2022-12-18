@@ -31,19 +31,19 @@ if uploaded_image is not None:
 	
 	col1, col5 = st.columns(2)
 	with col1:
-		st.image(img_array, caption = 'original', use_column_width = True)
+		st.image(img_array, caption = '1 original', use_column_width = True)
 	with col5:	
-		st.image(contour, caption = 'contour', use_column_width = True)
+		st.image(contour, caption = '5 contour', use_column_width = True)
 	
 	#ite_n = st.slider('線の太さ', 0, 10, 3)
 	
 	col2, col3, col4 = st.columns(3)
 	with col2:
-		st.image(gray, caption = 'grayscale', use_column_width = True)
+		st.image(gray, caption = '2 grayscale', use_column_width = True)
 	with col3:
-		st.image(dilated, caption = 'dilated', use_column_width = True)
+		st.image(dilated, caption = '3 dilated', use_column_width = True)
 	with col4:
-		st.image(diff, caption = 'diff', use_column_width = True)
+		st.image(diff, caption = '4 absdiff', use_column_width = True)
 
 
 	

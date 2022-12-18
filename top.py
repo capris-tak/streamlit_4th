@@ -30,7 +30,7 @@ if uploaded_image is not None:
 	contour = 255 - diff
 	st.image(contour, caption = 'contour', use_column_width = True)
 	
-	ite_n = st.slider('線の太さ', 0, 10, 3)
+	#ite_n = st.slider('線の太さ', 0, 10, 3)
 	
 	col1, col2, col3, col4 = st.columns(4)
 	with col1:

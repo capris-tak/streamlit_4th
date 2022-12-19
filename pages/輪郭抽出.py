@@ -68,7 +68,7 @@ if uploaded_image is not None:
 	      pt1=(pt1_x, pt1_y),
 	      pt2=(pt2_x, pt2_y),
 	      color=(0, 255, 0),
-	      thickness=3,
+	      thickness=1,
 	      lineType=cv2.LINE_4,
 	      shift=0)
 	st.image(rect, caption = 'rectangle', use_column_width = True)

@@ -56,6 +56,18 @@ if uploaded_image is not None:
 	height, width, channels = img_array.shape[:3]
 	st.write("width: " + str(width))
 	st.write("height: " + str(height))
+	pt1_x = st.slider('left top default:0', 0, width, 0)
+	pt1_y = st.slider('left botom default:0', 0, height, 0)
+	pt2_x = st.slider('right top default:'+str(width), width, 0, width)
+	pt2_y = st.slider('right botom default:'+str(height), height, 0, height)
+	rect = cv2.rectangle(img_array,
+              pt1=(pt1_x, pt1_y),
+              pt2=(pt2_x, pt2_y),
+              color=(0, 255, 0),
+              thickness=3,
+              lineType=cv2.LINE_4,
+              shift=0)
+	st.image(rect, caption = 'rectangle', use_column_width = True)
 	st.write()
 		
 

@@ -4,6 +4,9 @@ from PIL import Image
 import cv2
 import io
 
+
+uploaded_image = st.file_uploader('Choose an image..',type=['png', 'jpg','jpeg','webp'])
+
 neiborhood8 = np.array([
     [1,1,1],
     [1,1,1],
@@ -16,9 +19,6 @@ st.header('Edge Detect')
 # 【ゆっくり解説】線画抽出！OpenCVで画像からぬりえ作る【Python/初心者向けパイソンプログラミング講座】 あずぱん動画
 
 
-uploaded_image = st.file_uploader('Choose an image..',type=['png', 'jpg','jpeg','webp'])
-
-ite_n = st.slider('線の太さ default:3', 0, 10, 3)
 
 if uploaded_image is not None:
 	#with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
@@ -37,6 +37,8 @@ if uploaded_image is not None:
 		st.image(img_array, caption = '1 original', use_column_width = True)
 	with col5:	
 		st.image(contour, caption = '5 contour', use_column_width = True)
+		
+		ite_n = st.slider('線の太さ default:3', 0, 10, 3)
 
 		is_success, im_buf_arr = cv2.imencode(".jpg", contour)
 		byte_im = im_buf_arr.tobytes()

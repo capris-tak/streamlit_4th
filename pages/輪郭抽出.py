@@ -73,7 +73,7 @@ if uploaded_image is not None:
 	      shift=0)
 	st.image(rect, caption = 'rectangle', use_column_width = True)
 	
-	rect_cut = img_array[pt1_y:pt2_y, pt1_x:pt2_x,:]
+	rect_cut = img_array[pt1_y:pt2_y+1, pt1_x:pt2_x+1,:]
 	#Mat(img_array, Rect(pt1_x, pt1_y, pt2_x-pt1_x, pt2_y-pt1_y))
 	st.image(rect_cut, caption = 'trim', use_column_width = True)
 

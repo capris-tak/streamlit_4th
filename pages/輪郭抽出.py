@@ -9,16 +9,6 @@ uploaded_image = st.file_uploader('Choose an image..',type=['png', 'jpg','jpeg',
 
 
 
-st.header('Edge Detect')
-# https://www.youtube.com/watch?v=y86po2F8Gjg
-# 【ゆっくり解説】線画抽出！OpenCVで画像からぬりえ作る【Python/初心者向けパイソンプログラミング講座】 あずぱん動画
-neiborhood8 = np.array([
-    [1,1,1],
-    [1,1,1],
-    [1,1,1]],
-    np.uint8
-)
-ite_n = st.slider('線の太さ default:3', 0, 10, 3)
 
 if uploaded_image is not None:
 	st.header('Edge Detect')

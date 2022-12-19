@@ -28,6 +28,7 @@ if uploaded_image is not None:
 	image=Image.open(uploaded_image)
 	img_array = np.array(image)
 	gray = cv2.cvtColor(img_array, cv2.COLOR_RGB2GRAY)
+	ite_n = 3
 	dilated = cv2.dilate(gray, neiborhood8, iterations=ite_n)
 	diff = cv2.absdiff(dilated, gray)
 	contour = 255 - diff

@@ -66,8 +66,8 @@ if uploaded_image is not None:
 		pt2_y = st.slider('right botom default:'+str(height), height, 0, height)
 
 	rect = cv2.rectangle(img_array,
-	      pt1=(pt1_x, pt1_y-1),
-	      pt2=(pt2_x, pt2_y-1),
+	      pt1=(pt1_x+1, pt1_y+1),
+	      pt2=(pt2_x, pt2_y),
 	      color=(0, 255, 0),
 	      thickness=1,
 	      lineType=cv2.LINE_4,

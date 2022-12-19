@@ -18,7 +18,7 @@ st.header('Edge Detect')
 # https://www.youtube.com/watch?v=y86po2F8Gjg
 # 【ゆっくり解説】線画抽出！OpenCVで画像からぬりえ作る【Python/初心者向けパイソンプログラミング講座】 あずぱん動画
 
-
+ite_n = st.slider('線の太さ default:3', 0, 10, 3)
 
 if uploaded_image is not None:
 	#with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
@@ -28,7 +28,6 @@ if uploaded_image is not None:
 	image=Image.open(uploaded_image)
 	img_array = np.array(image)
 	gray = cv2.cvtColor(img_array, cv2.COLOR_RGB2GRAY)
-	ite_n = 3
 	dilated = cv2.dilate(gray, neiborhood8, iterations=ite_n)
 	diff = cv2.absdiff(dilated, gray)
 	contour = 255 - diff
@@ -39,7 +38,7 @@ if uploaded_image is not None:
 	with col5:	
 		st.image(contour, caption = '5 contour', use_column_width = True)
 		
-		ite_n = st.slider('線の太さ default:3', 0, 10, 3)
+
 
 		is_success, im_buf_arr = cv2.imencode(".jpg", contour)
 		byte_im = im_buf_arr.tobytes()

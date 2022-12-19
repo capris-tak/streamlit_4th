@@ -58,7 +58,7 @@ if uploaded_image is not None:
 	st.write("height: " + str(height))
 	pt1_x = st.slider('left top default:0', 0, width, 0)
 	pt1_y = st.slider('left botom default:0', 0, height, 0)
-	pt2_x = st.slider('right top default:'+str(width), width, 0, width)
+	pt2_x = st.slider('right top default:'+str(width), 0, width, width)
 	pt2_y = st.slider('right botom default:'+str(height), height, 0, height)
 	rect = cv2.rectangle(img_array,
               pt1=(pt1_x, pt1_y),

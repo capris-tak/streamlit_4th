@@ -54,8 +54,9 @@ if uploaded_image is not None:
 	
 	st.header('rectangle')
 	height, width, channels = img_array.shape[:3]
-	st.write("width: " + str(width))
-	st.write("height: " + str(height))
+	#st.write("width: " + str(width))
+	#st.write("height: " + str(height))
+	
 	r_col1, r_col2 = st.columns(2)
 	with r_col1:
 		pt1_x = st.slider('left top default:0', 0, width, 0)
@@ -71,11 +72,13 @@ if uploaded_image is not None:
 	      thickness=1,
 	      lineType=cv2.LINE_4,
 	      shift=0)
-	st.image(rect, caption = 'rectangle', use_column_width = True)
 	
-	rect_cut = img_array[pt1_y:pt2_y+1, pt1_x:pt2_x+1,:]
-	#Mat(img_array, Rect(pt1_x, pt1_y, pt2_x-pt1_x, pt2_y-pt1_y))
-	st.image(rect_cut, caption = 'trim', use_column_width = True)
+	rc_col1, rc_col2 = st.columns(2)
+	with rc_col1:
+		st.image(rect, caption = 'rectangle', use_column_width = True)
+	with rc_col2:
+		rect_cut = img_array[pt1_y:pt2_y+1, pt1_x:pt2_x+1,:]
+		st.image(rect_cut, caption = 'trim', use_column_width = True)
 
 		
 

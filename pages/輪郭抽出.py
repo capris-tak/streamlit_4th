@@ -53,6 +53,10 @@ if uploaded_image is not None:
 	
 	
 	st.header('rectangle')
+	height, width, channels = image.shape[:3]
+	st.write("width: " + str(width))
+	st.write("height: " + str(height))
+	st.write()
 		
 
 

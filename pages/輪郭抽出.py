@@ -77,7 +77,7 @@ if uploaded_image is not None:
 	with rc_col1:
 		st.image(rect, caption = 'rectangle', use_column_width = True)
 	with rc_col2:
-		rect_cut = img_array[pt1_y:pt2_y+1, pt1_x:pt2_x+1,:]
+		rect_cut = img_array[pt1_y:pt2_y, pt1_x:pt2_x,:]
 		st.image(rect_cut, caption = 'trim', use_column_width = True)
 
 		

@@ -83,8 +83,10 @@ if uploaded_image is not None:
 		
 import glob
 foulderimgs = glob.glob('pages/井桁弘恵/*')
-st.write(foulderimgs)
-	
+#st.write(foulderimgs)
+for foulderimg in foulderimgs:
+	img = Image.open(foulderimg)
+	st.image(img)
 	
 
 

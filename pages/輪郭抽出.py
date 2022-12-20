@@ -87,6 +87,10 @@ foulder_imgs = glob.glob('pages/井桁弘恵/*.jpg')
 
 #multiple images　Grid表示
 
+photo_n = st.slider('number', 0, len(foulder_imgs)-1, 1)
+imag=Image.open(foulder_imgs[photo_n])
+st.image(np.array(imag), caption = 'selected', use_column_width = True)
+
 idx = 0
 #col_num = 10
 

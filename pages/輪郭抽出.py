@@ -88,23 +88,23 @@ foulder_imgs = glob.glob('pages/井桁弘恵/*.jpg')
 #multiple images　Grid表示
 
 idx = 0
-col_num = 10
+#col_num = 10
 
 for _ in range(len(foulder_imgs)-1):
-	cols = st.columns(10)
+	cols = st.columns(4)
 
 	if idx < len(foulder_imgs):
-		cols[idx%10].image(foulder_imgs[idx],width=15, caption=str(idx+1))
+		cols[0].image(foulder_imgs[idx],width=150, caption=str(idx+1))
 		idx += 1
-	#if idx < len(foulder_imgs):
-	#	cols[1].image(foulder_imgs[idx],width=150, caption=str(idx+1))
-	#	idx += 1
-	#if idx < len(foulder_imgs):
-	#	cols[2].image(foulder_imgs[idx],width=150, caption=str(idx+1))
-	#	idx += 1
-	#if idx < len(foulder_imgs):
-	#	cols[3].image(foulder_imgs[idx],width=150, caption=str(idx+1))#caption=foulder_imgs[idx].split('/')[-1])
-	#	idx += 1
+	if idx < len(foulder_imgs):
+		cols[1].image(foulder_imgs[idx],width=150, caption=str(idx+1))
+		idx += 1
+	if idx < len(foulder_imgs):
+		cols[2].image(foulder_imgs[idx],width=150, caption=str(idx+1))
+		idx += 1
+	if idx < len(foulder_imgs):
+		cols[3].image(foulder_imgs[idx],width=150, caption=str(idx+1))#caption=foulder_imgs[idx].split('/')[-1])
+		idx += 1
 	else:
 		break
 		

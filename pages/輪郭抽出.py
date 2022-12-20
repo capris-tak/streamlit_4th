@@ -82,18 +82,36 @@ if uploaded_image is not None:
 
 		
 import glob
-foulderimgs = glob.glob('pages/井桁弘恵/*')
+foulder_imgs = glob.glob('pages/井桁弘恵/*')
 #st.write(foulderimgs)
 
-colg1, colg2 = st.columns(2)
-with colg1:
-	for foulderimg in foulderimgs:
-		img1 = Image.open(foulderimg)
-		st.image(img1)
-with colg2:
-	for foulderimg in foulderimgs:
-		img2 = Image.open(foulderimg)
-		st.image(img2)
+#multiple images　Grid表示
+
+idx = 0
+
+for _ in range(len(foulder_imgs)-1):
+    cols = st.columns(4)
+
+    if idx < len(foulder_imgs):
+        cols[0].image(foulder_imgs[idx],width=150, caption=foulder_imgs[idx].split('/')[-1])
+        print(os.path.join(image_dir, fName_list[idx]))
+        idx += 1
+    if idx < len(foulder_imgs):
+        cols[1].image(foulder_imgs[idx],width=150, caption=foulder_imgs[idx].split('/')[-1])
+        idx += 1
+    if idx < len(foulder_imgs):
+        cols[2].image(foulder_imgs[idx],width=150, caption=foulder_imgs[idx].split('/')[-1])
+        idx += 1
+    if idx < len(foulder_imgs):
+        cols[3].image(foulder_imgs[idx],width=150, caption=foulder_imgs[idx].split('/')[-1])
+        idx += 1
+    else:
+        break
+		
+		
+		
+		
+		
 #st.title("Streamlit + OpenCV Sample")
 #img = np.zeros((500, 500, 3), np.uint8)
 #cv2.rectangle(img, (100, 100), (400, 400), color=(255, 0, 0), thickness=-1)

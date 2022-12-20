@@ -84,12 +84,16 @@ if uploaded_image is not None:
 import glob
 foulderimgs = glob.glob('pages/井桁弘恵/*')
 #st.write(foulderimgs)
-for foulderimg in foulderimgs:
-	img = Image.open(foulderimg)
-	st.image(img)
-	
 
-
+colg1, colg2 = st.columns(2)
+with colg1:
+	for foulderimg in foulderimgs:
+		img = Image.open(foulderimg)
+		st.image(img)
+with colg2:
+	for foulderimg in foulderimgs:
+		img = Image.open(foulderimg)
+		st.image(img)
 #st.title("Streamlit + OpenCV Sample")
 #img = np.zeros((500, 500, 3), np.uint8)
 #cv2.rectangle(img, (100, 100), (400, 400), color=(255, 0, 0), thickness=-1)

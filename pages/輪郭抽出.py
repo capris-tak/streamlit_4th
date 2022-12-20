@@ -82,7 +82,7 @@ if uploaded_image is not None:
 
 		
 import glob
-foulderimgs = glob.gl0b('pages/井桁弘恵/*')
+foulderimgs = glob.glob('pages/井桁弘恵/*')
 st.write(foulderimgs)
 	
 	

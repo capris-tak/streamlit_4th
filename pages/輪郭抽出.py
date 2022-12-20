@@ -60,7 +60,7 @@ if uploaded_image is not None:
 	r_col1, r_col2 = st.columns(2)
 	with r_col1:
 		pt1_x, pt2_x = st.slider('left top default:0', 0, width, value=(0, width),)
-		pt1_y = st.slider('left botom default:0', 0, height, 0)
+		pt1_y, pt2_y = st.slider('left botom default:0', 0, height, value=(0, height),)
 	with r_col2:
 		#pt2_x = st.slider('right top default:'+str(width), width, 0, width)
 		pt2_y = st.slider('right botom default:'+str(height), height, 0, height)

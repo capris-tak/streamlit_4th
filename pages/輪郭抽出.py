@@ -85,15 +85,13 @@ import glob
 foulderimgs = glob.glob('pages/井桁弘恵/*')
 #st.write(foulderimgs)
 
-colg1, colg2 = st.columns(2)
+colg1, colg2 = st.beta_columns(2)
 with colg1:
-	foulderimgs = glob.glob('pages/井桁弘恵/*')
-	for foulderimg in foulderimgs:
+	for foulderimg in foulderimgs[::2]:
 		img1 = Image.open(foulderimg)
 		st.image(img1)
 with colg2:
-	foulderimgs = glob.glob('pages/井桁弘恵/*')
-	for foulderimg in foulderimgs:
+	for foulderimg in foulderimgs[1::2]:
 		img2 = Image.open(foulderimg)
 		st.image(img2)
 #st.title("Streamlit + OpenCV Sample")

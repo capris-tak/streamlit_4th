@@ -97,13 +97,13 @@ for _ in range(len(foulder_imgs)-1):
 	#print(os.path.join(image_dir, fName_list[idx]))
 		idx += 1
 	if idx < len(foulder_imgs):
-		cols[1].image(foulder_imgs[idx],width=150, caption=foulder_imgs[idx].split('/')[-1])
+		cols[1].image(foulder_imgs[idx],width=150, caption=str(idx+1))
 		idx += 1
 	if idx < len(foulder_imgs):
-		cols[2].image(foulder_imgs[idx],width=150, caption=foulder_imgs[idx].split('/')[-1])
+		cols[2].image(foulder_imgs[idx],width=150, caption=str(idx+1))
 		idx += 1
 	if idx < len(foulder_imgs):
-		cols[3].image(foulder_imgs[idx],width=150, caption=foulder_imgs[idx].split('/')[-1])
+		cols[3].image(foulder_imgs[idx],width=150, caption=str(idx+1))#caption=foulder_imgs[idx].split('/')[-1])
 		idx += 1
 	else:
 		break

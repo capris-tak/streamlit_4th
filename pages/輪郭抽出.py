@@ -81,8 +81,9 @@ if uploaded_image is not None:
 		st.image(rect_cut, caption = 'trim', use_column_width = True)
 
 		
-
-
+import glob
+foulderimgs = glob.gl0b('pages/井桁弘恵/*')
+st.write(foulderimgs)
 	
 	
 

@@ -68,7 +68,7 @@ if uploaded_image is not None:
 	rect = cv2.rectangle(img_array,
 	      pt1=(pt1_x+1, pt1_y+1),
 	      pt2=(pt2_x-1, pt2_y-1),
-	      color=(0, 0, 0),
+	      color=(0, 200, 0),
 	      thickness=2,
 	      lineType=cv2.LINE_8,
 	      shift=0)

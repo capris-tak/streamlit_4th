@@ -82,7 +82,7 @@ if uploaded_image is not None:
 
 		
 import glob
-foulder_imgs = glob.glob('pages/井桁弘恵/*.jpg')
+foulder_imgs = glob.glob('pages/犬/*.jpg')
 #st.write(foulderimgs)
 
 #multiple images　Grid表示

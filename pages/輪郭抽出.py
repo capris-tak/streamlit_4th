@@ -91,10 +91,10 @@ idx = 0
 col_num = 10
 
 for _ in range(len(foulder_imgs)-1):
-	cols = st.columns(col_num)
+	cols = st.columns(10)
 
 	if idx < len(foulder_imgs):
-		cols[idx//col_num].image(foulder_imgs[idx],width=600/col_num, caption=str(idx+1))
+		cols[idx//10].image(foulder_imgs[idx],width=15, caption=str(idx+1))
 		idx += 1
 	#if idx < len(foulder_imgs):
 	#	cols[1].image(foulder_imgs[idx],width=150, caption=str(idx+1))

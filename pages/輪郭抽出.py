@@ -85,7 +85,7 @@ import glob
 foulderimgs = glob.glob('pages/井桁弘恵/*')
 #st.write(foulderimgs)
 
-colg1, colg2 = st.beta_columns(2)
+colg1, colg2 = st.columns(2)
 with colg1:
 	for foulderimg in foulderimgs[::2]:
 		img1 = Image.open(foulderimg)

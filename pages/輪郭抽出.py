@@ -95,7 +95,7 @@ idx = 0
 #col_num = 10
 
 for _ in range(len(foulder_imgs)-1):
-	cols = st.columns(4)
+	cols = st.columns(5)
 
 	if idx < len(foulder_imgs):
 		cols[0].image(foulder_imgs[idx],width=150, caption=str(idx+1))
@@ -108,6 +108,9 @@ for _ in range(len(foulder_imgs)-1):
 		idx += 1
 	if idx < len(foulder_imgs):
 		cols[3].image(foulder_imgs[idx],width=150, caption=str(idx+1))#caption=foulder_imgs[idx].split('/')[-1])
+		idx += 1
+	if idx < len(foulder_imgs):
+		cols[4].image(foulder_imgs[idx],width=150, caption=str(idx+1))
 		idx += 1
 	else:
 		break

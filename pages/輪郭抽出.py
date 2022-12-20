@@ -93,7 +93,7 @@ for _ in range(len(foulder_imgs)-1):
 	cols = st.columns(4)
 
 	if idx < len(foulder_imgs):
-		cols[0].image(foulder_imgs[idx],width=150, caption=foulder_imgs[idx].split('/')[-1])
+		cols[0].image(foulder_imgs[idx],width=150, caption=str(idx+1))
 	#print(os.path.join(image_dir, fName_list[idx]))
 		idx += 1
 	if idx < len(foulder_imgs):

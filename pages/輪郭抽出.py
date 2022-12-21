@@ -124,7 +124,7 @@ if uploaded_image is not None:
 	st.header('tiling2')
 	
 	width = 800
-	padding = st.slider('padding', 0, 20, 1)
+	padding = st.slider('padding', 0, 100, 4)
 	img = np.zeros((int(padding/2), width, 3), np.uint8)
 	img[:,:,:] = 255
 	imgbottom = img

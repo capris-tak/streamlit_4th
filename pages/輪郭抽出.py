@@ -169,12 +169,13 @@ if uploaded_image is not None:
 	byte_im = im_buf_arr.tobytes()
 	btn = st.download_button(label="Download image", data=byte_im, file_name="tiled_image.jpg", mime="image/jpg")	
 	
-# with表記 (推奨)
-with st.expander("streamlitとは？", expanded=False):
-    ":star:" * 5
-    st.subheader("データアプリを構築して共有するためのより高速な方法")
-    st.write("Streamlitは、データスクリプトを数分で共有可能なWebアプリに変換します。\
-    すべて純粋なPythonで出来ています。フロントエンドの経験は不要です。")
+	
+	
+	with st.expander("streamlitとは？", expanded=False):
+		btn = st.download_button(label="Download image", data=byte_im, file_name="tiled_image.jpg", mime="image/jpg")
+		st.subheader("データアプリを構築して共有するためのより高速な方法")
+		st.write("Streamlitは、データスクリプトを数分で共有可能なWebアプリに変換します。\
+		すべて純粋なPythonで出来ています。フロントエンドの経験は不要です。")
 		
 #st.title("Streamlit + OpenCV Sample")
 #img = np.zeros((500, 500, 3), np.uint8)

@@ -122,25 +122,25 @@ if uploaded_image is not None:
 		
 		
 	st.header('tiling2')
-	t2_width = 800
-	t2_padding = 4
-	t2_img = np.zeros((int(t2_padding/2), t2_width, 3), np.unit8)
-	t2_img[:,:,:] = 255
-	t2_imgbottom = t2_img
+	width = 800
+	padding = 4
+	img = np.zeros((int(padding/2), width, 3), np.unit8)
+	img[:,:,:] = 255
+	imgbottom = img
 	
 	for i in range(0, len(foulder_imgs), 2):
 		img1 = Image.open(foulder_imgs[i])
 		h1, w1, ch = img1.shape
 		if i+1 == len(foulder_imgs):
-			img2 = np.zeros((int(t2_width/2), int(t2_width/2), 3), np.unit8)
+			img2 = np.zeros((int(width/2), int(width/2), 3), np.unit8)
 			img2[:, :, :] = 255
 			h2, w2, ch = img2.shape
 		else:
 			img2 = Image.open(foulder_imgs[i+1])
 			h2, w2, ch = img2.shape
 			
-		r1 = (t2_width - t2_padding*3) * h2 / (h2*w1 + h1*w2)
-		r2 = (t2_width - t2_padding*3) * h1 / (h2*w1 + h1*w2)
+		r1 = (width - padding*3) * h2 / (h2*w1 + h1*w2)
+		r2 = (width - padding*3) * h1 / (h2*w1 + h1*w2)
 		
 		h1r = int(h1*r1)
 		w1r = int(w1*r1)
@@ -150,16 +150,16 @@ if uploaded_image is not None:
 		img1r = cv2.resize(img1, (w1r, h1r))
 		img2r = cv2.resize(img2, (w2r, h2r))
 		
-		img12 = np.zeros((h1r+t2_padding, t2_width, 3), np.unit8)
+		img12 = np.zeros((h1r+padding, width, 3), np.unit8)
 		img12[:,:,:] = 255
 		
-		img12[int(t2_padding/2):int(t2_padding/2)+h1r, t2_padding:t2_padding+w1r, :] = img1r
-		img12[int(t2_padding/2):int(t2_padding/2)+h2r, t2_padding*2+w1r:t2_padding+w1r+w2r, :] = img2r
+		img12[int(padding/2):int(padding/2)+h1r, padding:padding+w1r, :] = img1r
+		img12[int(padding/2):int(padding/2)+h2r, padding*2+w1r:padding+w1r+w2r, :] = img2r
 		
 		img = cv2.vconcat([img, img12])
 		
-	img_conc = cv2.vconcat([img, t2_imgbottom])
-	st.image(np.array(img_conc), caption = 'tile', use_column_width = True)
+	img = cv2.vconcat([img, imgbottom])
+	st.image(np.array(img), caption = 'tile', use_column_width = True)
 	
 	
 		

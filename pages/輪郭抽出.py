@@ -161,7 +161,7 @@ if uploaded_image is not None:
 		img = cv2.vconcat([img, img_c])
 		
 	img = cv2.vconcat([img, imgbottom])
-	st.image(np.array(img), caption = 'tile', use_column_width = True)
+	st.image(img, caption = 'tile', use_column_width = True)
 	
 	
 		

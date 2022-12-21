@@ -183,16 +183,18 @@ if uploaded_image is not None:
 	
 	fig, ax = plt.subplots(pm, pm, figsize=(10, 10))
 	fig.subplots_adjust(hspace=0, wspace=0)
+	plt.gca().spines['right'].set_visible(False)
+	plt.gca().spines['top'].set_visible(False)
+	plt.gca().spines['bottom'].set_visible(False)
+	plt.gca().spines['left'].set_visible(False)
 
 	for i in range(pm):
 		for j in range(pm):
 			if pm*i+j < len(folder_imgs):
-				ax.axis("off")
 				ax[i, j].xaxis.set_major_locator(plt.NullLocator())
 				ax[i, j].yaxis.set_major_locator(plt.NullLocator())
 				ax[i, j].imshow(d[pm*i+j], cmap="bone")
 			else:
-				ax.axis("off")
 				ax[i, j].xaxis.set_major_locator(plt.NullLocator())
 				ax[i, j].yaxis.set_major_locator(plt.NullLocator())
 	plt.tick_params(labelbottom=False, labelleft=False, labelright=False, labeltop=False, bottom=False, left=False, right=False, top=False)

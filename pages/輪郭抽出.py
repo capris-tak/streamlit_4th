@@ -172,7 +172,6 @@ if uploaded_image is not None:
 	
 	
 	with st.expander("streamlitとは？", expanded=False):
-		btn = st.download_button(label="Download image", data=byte_im, file_name="tiled_image.jpg", mime="image/jpg")
 		st.subheader("データアプリを構築して共有するためのより高速な方法")
 		st.write("Streamlitは、データスクリプトを数分で共有可能なWebアプリに変換します。\
 		すべて純粋なPythonで出来ています。フロントエンドの経験は不要です。")

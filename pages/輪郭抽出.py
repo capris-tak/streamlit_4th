@@ -124,7 +124,7 @@ if uploaded_image is not None:
 	st.header('tiling2')
 	width = 800
 	padding = 4
-	img = np.zeros((int(padding/2), width, 3), np.unit8)
+	img = np.zeros((int(padding/2), width, 3), np.uint8)
 	img[:,:,:] = 255
 	imgbottom = img
 	
@@ -132,7 +132,7 @@ if uploaded_image is not None:
 		img1 = Image.open(foulder_imgs[i])
 		h1, w1, ch = img1.shape
 		if i+1 == len(foulder_imgs):
-			img2 = np.zeros((int(width/2), int(width/2), 3), np.unit8)
+			img2 = np.zeros((int(width/2), int(width/2), 3), np.uint8)
 			img2[:, :, :] = 255
 			h2, w2, ch = img2.shape
 		else:
@@ -150,7 +150,7 @@ if uploaded_image is not None:
 		img1r = cv2.resize(img1, (w1r, h1r))
 		img2r = cv2.resize(img2, (w2r, h2r))
 		
-		img12 = np.zeros((h1r+padding, width, 3), np.unit8)
+		img12 = np.zeros((h1r+padding, width, 3), np.uint8)
 		img12[:,:,:] = 255
 		
 		img12[int(padding/2):int(padding/2)+h1r, padding:padding+w1r, :] = img1r

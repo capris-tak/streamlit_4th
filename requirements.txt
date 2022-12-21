@@ -3,4 +3,3 @@ opencv-python-headless==4.6.0.66
 numpy
 pillow
 icrawler
-face_recognition

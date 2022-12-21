@@ -94,7 +94,7 @@ if uploaded_image is not None:
 
 	photo_n = st.slider('num', 1, len(foulder_imgs), 1)
 	imag=Image.open(foulder_imgs[photo_n-1])
-	st.image(np.array(imag), caption = 'selected', use_column_width = True)
+	st.image(np.array(imag), caption = photo_n + 'selected', use_column_width = True)
 
 	idx = 0
 	#col_num = 10

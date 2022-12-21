@@ -187,7 +187,7 @@ if uploaded_image is not None:
 	for i in range(pm):
 		for j in range(pm):
 			if pm*i+j < len(folder_imgs):
-				plt.axis('off')
+				ax[i, j].axis('off')
 				#ax[i, j].xaxis.set_major_locator(plt.NullLocator())
 				#ax[i, j].yaxis.set_major_locator(plt.NullLocator())
 				ax[i, j].imshow(d[pm*i+j])#, cmap="bone")

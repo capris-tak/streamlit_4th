@@ -188,7 +188,8 @@ if uploaded_image is not None:
 			ax[i, j].xaxis.set_major_locator(plt.NullLocator())
 			ax[i, j].yaxis.set_major_locator(plt.NullLocator())
 			ax[i, j].imshow(d[pm*i+j], cmap="bone")
-	plt.show()
+	st.pyplot(fig)
+	#plt.show()
 	
 	
 	with st.expander("streamlitとは？", expanded=False):

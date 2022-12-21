@@ -156,7 +156,7 @@ if uploaded_image is not None:
 		img_c[:,:,:] = 255
 		
 		img_c[int(padding/2):int(padding/2)+h1r, padding:padding+w1r, :] = img1r
-		img_c[int(padding/2):int(padding/2)+h2r, padding*2+w1r:padding+w1r+w2r, :] = img2r
+		img_c[int(padding/2):int(padding/2)+h2r, padding*2+w1r:padding*2+w1r+w2r, :] = img2r
 		
 		img = cv2.vconcat([img, img_c])
 		

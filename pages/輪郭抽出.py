@@ -190,6 +190,7 @@ if uploaded_image is not None:
 				ax[i, j].xaxis.set_major_locator(plt.NullLocator())
 				ax[i, j].yaxis.set_major_locator(plt.NullLocator())
 				ax[i, j].imshow(d[pm*i+j])#, cmap="bone")
+				plt.axis('off')
 			else:
 				ax[i, j].set_visible(False)
 				ax[i, j].xaxis.set_major_locator(plt.NullLocator())

@@ -152,13 +152,13 @@ if uploaded_image is not None:
 		img1r = cv2.resize(img1, (w1r, h1r))
 		img2r = cv2.resize(img2, (w2r, h2r))
 		
-		img12 = np.zeros((h1r+padding, width, 3), np.uint8)
-		img12[:,:,:] = 255
+		img_c = np.zeros((h1r+padding, width, 3), np.uint8)
+		img_c[:,:,:] = 255
 		
-		img12[int(padding/2):int(padding/2)+h1r, padding:padding+w1r, :] = img1r
-		img12[int(padding/2):int(padding/2)+h2r, padding*2+w1r:padding+w1r+w2r, :] = img2r
+		img_c[int(padding/2):int(padding/2)+h1r, padding:padding+w1r, :] = img1r
+		img_c[int(padding/2):int(padding/2)+h2r, padding*2+w1r:padding+w1r+w2r, :] = img2r
 		
-		img = cv2.vconcat([img, img12])
+		img = cv2.vconcat([img, img_c])
 		
 	img = cv2.vconcat([img, imgbottom])
 	st.image(np.array(img), caption = 'tile', use_column_width = True)

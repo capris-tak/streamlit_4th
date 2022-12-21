@@ -182,6 +182,7 @@ if uploaded_image is not None:
 		d.append(img)
 	
 	fig, ax = plt.subplots(pm, pm, figsize=(10, 10))
+	ax[:, :].axis('off')
 	fig.subplots_adjust(hspace=0, wspace=0)
 
 	for i in range(pm):

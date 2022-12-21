@@ -183,11 +183,15 @@ if uploaded_image is not None:
 	
 	fig, ax = plt.subplots(pm, pm, figsize=(10, 10))
 	fig.subplots_adjust(hspace=0, wspace=0)
+
 	for i in range(pm):
 		for j in range(pm):
-			ax[i, j].xaxis.set_major_locator(plt.NullLocator())
-			ax[i, j].yaxis.set_major_locator(plt.NullLocator())
-			ax[i, j].imshow(d[pm*i+j], cmap="bone")
+			if pm*i+j < len(folder_imgs):
+				ax[i, j].xaxis.set_major_locator(plt.NullLocator())
+				ax[i, j].yaxis.set_major_locator(plt.NullLocator())
+				ax[i, j].imshow(d[pm*i+j], cmap="bone")
+			else:
+				break
 	st.pyplot(fig)
 	#plt.show()
 	

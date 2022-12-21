@@ -184,7 +184,7 @@ if uploaded_image is not None:
 	fig, ax = plt.subplots(pm, pm, figsize=(10, 10),edgecolor = 'white')
 	fig.subplots_adjust(hspace=0, wspace=0)
 
-	for i in range(len(pm):
+	for i in range(pm):
 		for j in range(pm):
 			if pm*i+j < len(folder_imgs):
 				ax[i, j].xaxis.set_major_locator(plt.NullLocator())

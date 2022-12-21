@@ -4,6 +4,7 @@ from PIL import Image
 import cv2
 import io
 from matplotlib import pyplot as plt
+matplotlib.pyplot.axis('off')
 
 
 uploaded_image = st.file_uploader('Choose an image..',type=['png', 'jpg','jpeg','webp'])

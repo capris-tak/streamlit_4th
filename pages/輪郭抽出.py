@@ -181,7 +181,7 @@ if uploaded_image is not None:
 		#img = cv2.resize(img, (400, 400), cv2.INTER_LANCZOS4)
 		d.append(img)
 	
-	fig, ax = plt.subplots(pm, pm, figsize=(10, 10),edgecolor ='white',linewidth = 0pt)
+	fig, ax = plt.subplots(pm, pm, figsize=(10, 10))
 	fig.subplots_adjust(hspace=0, wspace=0)
 
 	for i in range(pm):

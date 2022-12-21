@@ -167,7 +167,7 @@ if uploaded_image is not None:
 	
 	is_success, im_buf_arr = cv2.imencode(".jpg", img_t)
 	byte_im = im_buf_arr.tobytes()
-	—:btn = st.download_button(label="Download image", data=byte_im, file_name="tiled_image.jpg", mime="image/jpg")	
+	btn = st.download_button(label="Download image", data=byte_im, file_name="tiled_image.jpg", mime="image/jpg")	
 	
 		
 		

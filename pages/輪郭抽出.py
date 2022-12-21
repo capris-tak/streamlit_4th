@@ -41,7 +41,7 @@ if uploaded_image is not None:
 
 		is_success, im_buf_arr = cv2.imencode(".jpg", contour)
 		byte_im = im_buf_arr.tobytes()
-		btn = st.download_button(label="Download 5.contour image", data=byte_im, file_name="edge.jpg", mime="image/jpg")
+		btn = st.download_button(label="Download contour image", data=byte_im, file_name="edge.jpg", mime="image/jpg")
 
 	col2, col3, col4 = st.columns(3)
 	with col2:
@@ -165,6 +165,9 @@ if uploaded_image is not None:
 	tiled_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 	st.image(tiled_img, caption = 'tile', use_column_width = True)
 	
+	is_success, im_buf_arr = cv2.imencode(".jpg", tiled_img)
+	byte_im = im_buf_arr.tobytes()
+	btn = st.download_button(label="Download image", data=byte_im, file_name="tiled_image.jpg", mime="image/jpg")	
 	
 		
 		

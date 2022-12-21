@@ -170,7 +170,7 @@ if uploaded_image is not None:
 	btn = st.download_button(label="Download image", data=byte_im, file_name="tiled_image.jpg", mime="image/jpg")	
 	
 # with表記 (推奨)
-with st.expander("streamlitとは？", expanded=):
+with st.expander("streamlitとは？", expanded=False):
     ":star:" * 5
     st.subheader("データアプリを構築して共有するためのより高速な方法")
     st.write("Streamlitは、データスクリプトを数分で共有可能なWebアプリに変換します。\

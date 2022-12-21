@@ -130,6 +130,7 @@ if uploaded_image is not None:
 	
 	for i in range(0, len(foulder_imgs), 2):
 		img1 = Image.open(foulder_imgs[i])
+		img1 = np.array(img1)
 		h1, w1, ch = img1.shape[:3]
 		if i+1 == len(foulder_imgs):
 			img2 = np.zeros((int(width/2), int(width/2), 3), np.uint8)
@@ -137,6 +138,7 @@ if uploaded_image is not None:
 			h2, w2, ch = img2.shape[:3]
 		else:
 			img2 = Image.open(foulder_imgs[i+1])
+			img2 = np.array(img2)
 			h2, w2, ch = img2.shape[:3]
 			
 		r1 = (width - padding*3) * h2 / (h2*w1 + h1*w2)

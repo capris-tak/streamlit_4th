@@ -161,11 +161,11 @@ if uploaded_image is not None:
 		
 		img = cv2.vconcat([img, img_c])
 		
-	img = cv2.vconcat([img, imgbottom])
-	tiled_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+	img_t = cv2.vconcat([img, imgbottom])
+	tiled_img = cv2.cvtColor(img_t, cv2.COLOR_BGR2RGB)
 	st.image(tiled_img, caption = 'tile', use_column_width = True)
 	
-	is_success, im_buf_arr = cv2.imencode(".jpg", tiled_img)
+	is_success, im_buf_arr = cv2.imencode(".jpg", img_t)
 	byte_im = im_buf_arr.tobytes()
 	btn = st.download_button(label="Download image", data=byte_im, file_name="tiled_image.jpg", mime="image/jpg")	
 	

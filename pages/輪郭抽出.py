@@ -87,35 +87,35 @@ if uploaded_image is not None:
 		
 	st.header('tiling')	
 	import glob
-	foulder_imgs = glob.glob('pages/犬/*.jpg')
+	folder_imgs = glob.glob('pages/犬/*.jpg')
 	#st.write(foulderimgs)
 
 	#multiple images　Grid表示
 
-	photo_n = st.slider('num', 1, len(foulder_imgs), 1)
-	imag=Image.open(foulder_imgs[photo_n-1])
+	photo_n = st.slider('num', 1, len(folder_imgs), 1)
+	imag=Image.open(folder_imgs[photo_n-1])
 	st.image(np.array(imag), caption = str(photo_n) + ' selected', use_column_width = True)
 
 	idx = 0
 	#col_num = 10
 
-	for _ in range(len(foulder_imgs)-1):
+	for _ in range(len(folder_imgs)-1):
 		cols = st.columns(5)
 
-		if idx < len(foulder_imgs):
-			cols[0].image(foulder_imgs[idx],width=150, caption=str(idx+1))
+		if idx < len(folder_imgs):
+			cols[0].image(folder_imgs[idx],width=150, caption=str(idx+1))
 			idx += 1
-		if idx < len(foulder_imgs):
-			cols[1].image(foulder_imgs[idx],width=150, caption=str(idx+1))
+		if idx < len(folder_imgs):
+			cols[1].image(folder_imgs[idx],width=150, caption=str(idx+1))
 			idx += 1
-		if idx < len(foulder_imgs):
-			cols[2].image(foulder_imgs[idx],width=150, caption=str(idx+1))
+		if idx < len(folder_imgs):
+			cols[2].image(folder_imgs[idx],width=150, caption=str(idx+1))
 			idx += 1
-		if idx < len(foulder_imgs):
-			cols[3].image(foulder_imgs[idx],width=150, caption=str(idx+1))#caption=foulder_imgs[idx].split('/')[-1])
+		if idx < len(folder_imgs):
+			cols[3].image(folder_imgs[idx],width=150, caption=str(idx+1))#caption=foulder_imgs[idx].split('/')[-1])
 			idx += 1
-		if idx < len(foulder_imgs):
-			cols[4].image(foulder_imgs[idx],width=150, caption=str(idx+1))
+		if idx < len(folder_imgs):
+			cols[4].image(folder_imgs[idx],width=150, caption=str(idx+1))
 			idx += 1
 		else:
 			break
@@ -129,17 +129,17 @@ if uploaded_image is not None:
 	img[:,:,:] = 255
 	imgbottom = img
 	
-	for i in range(0, len(foulder_imgs), 2):
+	for i in range(0, len(folder_imgs), 2):
 		#img1 = Image.open(foulder_imgs[i])
-		img1 = cv2.imread(foulder_imgs[i])
+		img1 = cv2.imread(folder_imgs[i])
 		h1, w1, ch = img1.shape[:3]
-		if i+1 == len(foulder_imgs):
+		if i+1 == len(folder_imgs):
 			img2 = np.zeros((int(width/2), int(width/2), 3), np.uint8)
 			img2[:, :, :] = 255
 			h2, w2, ch = img2.shape[:3]
 		else:
 			#img2 = Image.open(foulder_imgs[i+1])
-			img2 = cv2.imread(foulder_imgs[i+1])
+			img2 = cv2.imread(folder_imgs[i+1])
 			h2, w2, ch = img2.shape[:3]
 			
 		r1 = (width - padding*3) * h2 / (h2*w1 + h1*w2)
@@ -169,6 +169,25 @@ if uploaded_image is not None:
 	byte_im = im_buf_arr.tobytes()
 	btn = st.download_button(label="Download image", data=byte_im, file_name="tiled_image.jpg", mime="image/jpg")	
 	
+	
+	
+	st.header('tiling3')
+	pm = 3
+	d = []
+	for folder_img in folder_imgs:
+	img = Image.open(folder_img)
+	img = np.asarray(img)
+	#img = cv2.resize(img, (400, 400), cv2.INTER_LANCZOS4)
+	d.append(img)
+	
+	fig, ax = plt.subplots(pm, pm, figsize=(10, 10))
+	fig.subplots_adjust(hspace=0, wspace=0)
+	for i in range(pm):
+		for j in range(pm):
+			ax[i, j].xaxis.set_major_locator(plt.NullLocator())
+			ax[i, j].yaxis.set_major_locator(plt.NullLocator())
+			ax[i, j].imshow(d[pm*i+j], cmap="bone")
+	plt.show()
 	
 	
 	with st.expander("streamlitとは？", expanded=False):

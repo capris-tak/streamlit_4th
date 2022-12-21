@@ -4,7 +4,6 @@ from PIL import Image
 import cv2
 import io
 from matplotlib import pyplot as plt
-plt.axis('off')
 
 
 uploaded_image = st.file_uploader('Choose an image..',type=['png', 'jpg','jpeg','webp'])
@@ -188,14 +187,13 @@ if uploaded_image is not None:
 	for i in range(pm):
 		for j in range(pm):
 			if pm*i+j < len(folder_imgs):
-				plt.axis('off')
 				ax[i, j].xaxis.set_major_locator(plt.NullLocator())
 				ax[i, j].yaxis.set_major_locator(plt.NullLocator())
 				ax[i, j].imshow(d[pm*i+j], cmap="bone")
 			else:
 				plt.axis('off')
-				ax[i, j].xaxis.set_major_locator(plt.NullLocator())
-				ax[i, j].yaxis.set_major_locator(plt.NullLocator())
+				#ax[i, j].xaxis.set_major_locator(plt.NullLocator())
+				#ax[i, j].yaxis.set_major_locator(plt.NullLocator())
 	#plt.tick_params(labelbottom=False, labelleft=False, labelright=False, labeltop=False, bottom=False, left=False, right=False, top=False)
 	st.pyplot(fig)
 	#plt.show()

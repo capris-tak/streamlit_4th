@@ -181,10 +181,10 @@ if uploaded_image is not None:
 		#img = cv2.resize(img, (400, 400), cv2.INTER_LANCZOS4)
 		d.append(img)
 	
-	fig, ax = plt.subplots(pm, pm, figsize=(10, 10))
+	fig, ax = plt.subplots(pm, pm, figsize=(10, 10),edgecolor = 'white')
 	fig.subplots_adjust(hspace=0, wspace=0)
 
-	for i in range(len(folder_imgs)//pm):
+	for i in range(len(pm):
 		for j in range(pm):
 			if pm*i+j < len(folder_imgs):
 				ax[i, j].xaxis.set_major_locator(plt.NullLocator())

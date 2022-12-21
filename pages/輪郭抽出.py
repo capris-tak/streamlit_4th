@@ -132,7 +132,7 @@ if uploaded_image is not None:
 		img1 = Image.open(foulder_imgs[i])
 		h1, w1, ch = img1.shape
 		if i+1 == len(foulder_imgs):
-			img2 = np.zeros((int(t2_width/2), int(t2_width/2), 3) np.unit8)
+			img2 = np.zeros((int(t2_width/2), int(t2_width/2), 3), np.unit8)
 			img2[:, :, :] = 255
 			h2, w2, ch = img2.shape
 		else:

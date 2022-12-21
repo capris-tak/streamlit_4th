@@ -3,6 +3,7 @@ import numpy as np
 from PIL import Image
 import cv2
 import io
+from matplotlib import pyplot as plt
 
 
 uploaded_image = st.file_uploader('Choose an image..',type=['png', 'jpg','jpeg','webp'])
@@ -175,10 +176,10 @@ if uploaded_image is not None:
 	pm = 3
 	d = []
 	for folder_img in folder_imgs:
-	img = Image.open(folder_img)
-	img = np.asarray(img)
-	#img = cv2.resize(img, (400, 400), cv2.INTER_LANCZOS4)
-	d.append(img)
+		img = Image.open(folder_img)
+		img = np.asarray(img)
+		#img = cv2.resize(img, (400, 400), cv2.INTER_LANCZOS4)
+		d.append(img)
 	
 	fig, ax = plt.subplots(pm, pm, figsize=(10, 10))
 	fig.subplots_adjust(hspace=0, wspace=0)

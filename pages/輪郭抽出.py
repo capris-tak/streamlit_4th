@@ -173,7 +173,7 @@ if uploaded_image is not None:
 	
 	
 	st.header('tiling3')
-	pm = 3
+	pm = st.slider('x', 1, 10, 4)
 	d = []
 	for folder_img in folder_imgs:
 		img = Image.open(folder_img)

@@ -190,11 +190,13 @@ if uploaded_image is not None:
 				ax[i, j].xaxis.set_major_locator(plt.NullLocator())
 				ax[i, j].yaxis.set_major_locator(plt.NullLocator())
 				ax[i, j].imshow(d[pm*i+j], cmap="bone")
+				plt.axis('off')
 			else:
 				ax[i, j].xaxis.set_major_locator(plt.NullLocator())
 				ax[i, j].yaxis.set_major_locator(plt.NullLocator())
+				plt.axis('off')
 	#plt.tick_params(labelbottom=False, labelleft=False, labelright=False, labeltop=False, bottom=False, left=False, right=False, top=False)
-	plt.axis('off')
+
 	st.pyplot(fig)
 	#plt.show()
 	

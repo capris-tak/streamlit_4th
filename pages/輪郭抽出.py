@@ -138,7 +138,7 @@ if uploaded_image is not None:
 			h2, w2, ch = img2.shape[:3]
 		else:
 			#img2 = Image.open(foulder_imgs[i+1])
-			img2 = cv2.imread(foulder_imgs[i]+1)
+			img2 = cv2.imread(foulder_imgs[i+1])
 			h2, w2, ch = img2.shape[:3]
 			
 		r1 = (width - padding*3) * h2 / (h2*w1 + h1*w2)
